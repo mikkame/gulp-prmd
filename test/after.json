@@ -1,0 +1,134 @@
+{
+  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "post": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "FIXME - Post",
+      "description": "FIXME",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of post",
+          "readOnly": true,
+          "example": 12345678,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of post",
+          "readOnly": true,
+          "example": "モカ",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/post/definitions/id"
+            },
+            {
+              "$ref": "#/definitions/post/definitions/name"
+            }
+          ],
+          "example": "550e8400-e29b-41d4-a716-446655440000"
+        },
+        "created_at": {
+          "description": "when post was created",
+          "example": "9999-99-99",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when post was updated",
+          "example": "9999-99-99",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new post.",
+          "href": "/posts",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing post.",
+          "href": "/posts/{(%23%2Fdefinitions%2Fpost%2Fdefinitions%2Fidentity)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing post.",
+          "href": "/posts/{(%23%2Fdefinitions%2Fpost%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing posts.",
+          "href": "/posts",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing post.",
+          "href": "/posts/{(%23%2Fdefinitions%2Fpost%2Fdefinitions%2Fidentity)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/post/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/post/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/post/definitions/name"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/post/definitions/updated_at"
+        }
+      }
+    }
+  },
+  "properties": {
+    "post": {
+      "$ref": "#/definitions/post"
+    }
+  }
+}

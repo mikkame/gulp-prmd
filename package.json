@@ -1,0 +1,38 @@
+{
+  "name": "gulp-prmd",
+  "version": "0.0.0",
+  "description": "prmd for gulp",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mikkame/gulp-prmd.git"
+  },
+  "keywords": [
+    "gulp",
+    "prmd",
+    "json",
+    "schema",
+    "gulpplugin"
+  ],
+  "author": "mikkame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikkame/gulp-prmd/issues"
+  },
+  "homepage": "https://github.com/mikkame/gulp-prmd#readme",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -R spec"
+  },
+  "dependencies": {
+    "exec": "^0.2.1",
+    "gulp-util": "^3.0.6",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "mocha": "^2.3.0",
+    "should": "^7.1.0",
+    "stream-assert-gulp": "^0.4.9",
+    "through2": "^2.0.0"
+  }
+}
