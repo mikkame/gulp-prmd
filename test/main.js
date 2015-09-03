@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var prmd = require('gulp-prmd');
+var prmd = require('../index.js');
 var should = require('should');
 var through = require("through2");
 var fs = require("fs");
